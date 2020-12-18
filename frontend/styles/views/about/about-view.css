@@ -2,3 +2,20 @@
     margin-top: 1rem;
     margin-bottom: 1rem;
 }
+
+#about-view div {
+    margin: 0;
+    width: 80%;
+}
+
+#about-view h4:first-child {
+    margin-top: 12px;
+}
+
+#about-view div h4 {
+    text-align: left;
+}
+
+#about-view div p {
+    text-align: justify;
+}
