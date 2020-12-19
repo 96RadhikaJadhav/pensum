@@ -12,14 +12,9 @@ import com.vaadin.flow.component.html.Hr;
 import com.vaadin.flow.component.html.Paragraph;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.PageTitle;
-import com.vaadin.flow.router.Route;
-import com.vaadin.flow.router.RouteAlias;
 import swiss.fihlon.pensum.Application;
-import swiss.fihlon.pensum.views.main.MainView;
 
-@Route(value = "about", layout = MainView.class)
 @PageTitle("About | " + Application.APPLICATION_TITLE)
-@RouteAlias(value = "", layout = MainView.class)
 @CssImport("./styles/views/about/about-view.css")
 public class AboutView extends VerticalLayout {
 
