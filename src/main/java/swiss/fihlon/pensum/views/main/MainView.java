@@ -34,6 +34,7 @@ import com.vaadin.flow.component.tabs.Tabs;
 import com.vaadin.flow.component.tabs.TabsVariant;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.RouterLink;
+import com.vaadin.flow.server.VaadinService;
 import java.util.Optional;
 import swiss.fihlon.pensum.Application;
 import swiss.fihlon.pensum.views.about.AboutView;
@@ -64,6 +65,9 @@ public class MainView extends AppLayout {
         viewTitle = new H1();
         layout.add(viewTitle);
         layout.add(new Image("images/user.svg", "Avatar"));
+        if (!VaadinService.getCurrent().getDeploymentConfiguration().isProductionMode()) {
+            layout.setClassName("non-prod");
+        }
         return layout;
     }
 

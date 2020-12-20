@@ -1,6 +1,9 @@
 #header {
   height: var(--lumo-size-xl);
 }
+#header.non-prod {
+  background-color: #c30000;
+}
 #header img {
   border-radius: 50%;
   height: var(--lumo-size-s);
