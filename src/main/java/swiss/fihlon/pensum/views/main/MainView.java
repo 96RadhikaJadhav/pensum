@@ -35,6 +35,7 @@ import com.vaadin.flow.component.tabs.TabsVariant;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.RouterLink;
 import java.util.Optional;
+import swiss.fihlon.pensum.Application;
 import swiss.fihlon.pensum.views.about.AboutView;
 import swiss.fihlon.pensum.views.logout.LogoutView;
 
@@ -77,7 +78,7 @@ public class MainView extends AppLayout {
         logoLayout.setId("logo");
         logoLayout.setAlignItems(FlexComponent.Alignment.CENTER);
         logoLayout.add(new Image("images/logo.png", "Pensum logo"));
-        logoLayout.add(new H1("Pensum"));
+        logoLayout.add(new H1(Application.APPLICATION_TITLE));
         layout.add(logoLayout, menu);
         return layout;
     }
