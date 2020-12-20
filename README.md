@@ -21,6 +21,17 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 ## Running and debugging the application
 
+### Environment variables
+To run the application, you need to specify a database (which must exist, but may be empty) using environment variables like in this example:
+
+```
+PENSUM_DATASOURCE_URL=jdbc:mysql://localhost:3306/pensum_dev
+PENSUM_DATASOURCE_USERNAME=dbuser
+PENSUM_DATASOURCE_PASSWORD=dbpassword
+```
+
+Adjust the content of the environment variables as necessary. Supported database types are: `mysql`
+
 ### Running the application from the command line.
 To run from the command line, use `mvn` and open http://localhost:8080 in your browser.
 
