@@ -8,15 +8,13 @@ public class User extends AbstractEntity {
 
     private String email;
     private String password;
-    private Role role;
 
     public User() {
     }
 
-    public User(final String email, final String password, final Role role) {
+    public User(final String email, final String password) {
         this.email = email;
         this.password = password;
-        this.role = role;
     }
 
     public String getEmail() {
@@ -35,11 +33,4 @@ public class User extends AbstractEntity {
         this.password = password;
     }
 
-    public Role getRole() {
-        return role;
-    }
-
-    public void setRole(final Role role) {
-        this.role = role;
-    }
 }
