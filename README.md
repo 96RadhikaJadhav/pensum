@@ -2,7 +2,7 @@
 
 **Manage your life with Pensum!**
 
-*Copyright (C) 2020 Marcus Fihlon*
+*Copyright © 2020 Marcus Fihlon*
 
 ## License
 
