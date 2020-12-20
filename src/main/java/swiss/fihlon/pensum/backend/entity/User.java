@@ -18,13 +18,20 @@
  */
 package swiss.fihlon.pensum.backend.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotNull;
 import swiss.fihlon.pensum.backend.AbstractEntity;
 
 @Entity
 public class User extends AbstractEntity {
 
+    @Email
+    @NotNull
+    @Column(unique = true)
     private String email;
+
     private String password;
 
     public User() {
