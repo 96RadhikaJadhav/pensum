@@ -1,6 +1,5 @@
 package swiss.fihlon.pensum.backend.service;
 
-import java.util.Random;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 import javax.annotation.PostConstruct;
@@ -27,8 +26,8 @@ public class UserService {
         if (userRepository.count() == 0) {
             userRepository.saveAll(
                     Stream.of(
-                            new User("marcus@fihlon.swiss", "test123", Role.ADMIN),
-                            new User("marcus@fihlon.ch", "test123", Role.USER)
+                            new User("marcus@fihlon.swiss", "{noop}test123", Role.ADMIN),
+                            new User("marcus@fihlon.ch", "{noop}test123", Role.USER)
                     ).collect(Collectors.toList()));
         }
     }

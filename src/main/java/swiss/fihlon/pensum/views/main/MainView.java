@@ -15,14 +15,10 @@ import com.vaadin.flow.component.tabs.Tab;
 import com.vaadin.flow.component.tabs.Tabs;
 import com.vaadin.flow.component.tabs.TabsVariant;
 import com.vaadin.flow.router.PageTitle;
-import com.vaadin.flow.router.RouteAlias;
 import com.vaadin.flow.router.RouterLink;
-import com.vaadin.flow.server.VaadinSession;
 import java.util.Optional;
-import swiss.fihlon.pensum.backend.entity.User;
-import swiss.fihlon.pensum.backend.service.AuthService;
 import swiss.fihlon.pensum.views.about.AboutView;
-import swiss.fihlon.pensum.views.login.LoginView;
+import swiss.fihlon.pensum.views.logout.LogoutView;
 
 /**
  * The main view is a top-level placeholder for other views.
@@ -31,12 +27,10 @@ import swiss.fihlon.pensum.views.login.LoginView;
 @CssImport("./styles/views/main/main-view.css")
 public class MainView extends AppLayout {
 
-    private final AuthService authService;
     private final Tabs menu;
     private H1 viewTitle;
 
-    public MainView(final AuthService authService) {
-        this.authService = authService;
+    public MainView() {
         setPrimarySection(Section.DRAWER);
         addToNavbar(true, createHeaderContent());
         menu = createMenu();
@@ -83,10 +77,10 @@ public class MainView extends AppLayout {
     }
 
     private Component[] createMenuItems() {
-        var user = VaadinSession.getCurrent().getAttribute(User.class);
-        return authService.getAuthorizedRoutes(user.getRole()).stream()
-                .map(route -> createTab(route.name(), route.view()))
-                .toArray(Component[]::new);
+        return new Tab[]{
+                createTab("About", AboutView.class),
+                createTab("Logout", LogoutView.class)
+        };
     }
 
     private static Tab createTab(String text, Class<? extends Component> navigationTarget) {
