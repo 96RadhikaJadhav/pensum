@@ -58,7 +58,6 @@ public class LoginView extends VerticalLayout implements BeforeEnterObserver {
 
     private String loginPageFocusHack() {
         return """
-            debugger;
             const observer = new MutationObserver(function(mutations) {
                 mutations.forEach(function(mutation) {
                     if (mutation.target.id === "outlet") {
