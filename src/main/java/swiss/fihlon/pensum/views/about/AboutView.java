@@ -36,8 +36,8 @@ import swiss.fihlon.pensum.Application;
 import swiss.fihlon.pensum.views.main.MainView;
 
 @Route(value = "about", layout = MainView.class)
-@PageTitle("About | " + Application.APPLICATION_TITLE)
 @RouteAlias(value = "", layout = MainView.class)
+@PageTitle("About | " + Application.APPLICATION_TITLE)
 @CssImport("./styles/views/about/about-view.css")
 public class AboutView extends VerticalLayout {
 

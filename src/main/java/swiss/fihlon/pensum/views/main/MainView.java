@@ -39,6 +39,7 @@ import java.util.Optional;
 import swiss.fihlon.pensum.Application;
 import swiss.fihlon.pensum.views.about.AboutView;
 import swiss.fihlon.pensum.views.logout.LogoutView;
+import swiss.fihlon.pensum.views.todo.TodoView;
 
 @JsModule("./styles/shared-styles.js")
 @CssImport("./styles/views/main/main-view.css")
@@ -99,6 +100,7 @@ public class MainView extends AppLayout {
     private Component[] createMenuItems() {
         return new Tab[]{
                 createTab("About", AboutView.class),
+                createTab("Todo", TodoView.class),
                 createTab("Logout", LogoutView.class)
         };
     }
